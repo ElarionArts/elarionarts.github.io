@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // Язык: ?lang= → сохранённый выбор → язык браузера (общий с сайтом игры)
+  (function () {
+    var l = null;
+    try { var q = new URLSearchParams(location.search).get('lang'); if (q === 'ru' || q === 'en') l = q; } catch (e) {}
+    if (!l) { try { var s = localStorage.getItem('lang'); if (s === 'ru' || s === 'en') l = s; } catch (e) {} }
+    if (!l) l = (navigator.language || 'ru').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<title>ElarionArts — мобильные игры</title>
+<meta name="description" content="ElarionArts — независимый разработчик мобильных игр для Android. ElarionArts is an independent developer of mobile games for Android.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --night: #0b1026; --night-top: #1a2150; --card: #151c3b; --line: #2a3566;
+    --text: #e8ebfa; --dim: #a9b1da; --accent: #ffd54f; --teal: #4dd0e1;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+    background: linear-gradient(180deg, var(--night-top), var(--night) 420px) fixed, var(--night);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; }
+  .studio { display: inline-flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 800; letter-spacing: .5px; color: #fff; }
+  .studio .emblem { flex: none; width: 62px; height: 55px; }
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+  .lang button {
+    border: 0; background: none; color: var(--dim); font: inherit; font-size: 13px; font-weight: 700;
+    padding: 4px 10px; border-radius: 999px; cursor: pointer; letter-spacing: .5px; line-height: 1.4;
+  }
+  .lang button[aria-pressed="false"]:hover { color: #fff; }
+  .lang button[aria-pressed="true"] { background: var(--accent); color: #2b1d00; cursor: default; }
+  .lang button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+  main { flex: 1; }
+  h1 { font-size: 34px; line-height: 1.2; margin: 48px 0 10px; color: #fff; }
+  .lead { color: var(--dim); margin: 0 0 32px; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--dim); margin: 0 0 14px; }
+  .game {
+    display: flex; gap: 20px; align-items: center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px;
+  }
+  .game-icon { flex: none; width: 84px; height: 84px; border-radius: 20px; }
+  .game h3 { margin: 0 0 4px; font-size: 21px; color: var(--accent); }
+  .game p { margin: 0 0 12px; color: var(--dim); font-size: 16px; }
+  .links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+  .links a { color: var(--teal); font-weight: 600; font-size: 15px; text-decoration: none; white-space: nowrap; }
+  .links a:hover { color: #fff; }
+  footer { color: var(--dim); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+    border-top: 1px solid var(--line); margin-top: 56px; padding-top: 22px; padding-bottom: 40px; }
+  footer a { color: var(--dim); }
+  footer a:hover { color: #fff; }
+  html[data-lang="ru"] .en, html[data-lang="en"] .ru { display: none; }
+  html:not([data-lang]) .lang { display: none; }
+  @media (max-width: 520px) {
+    h1 { font-size: 28px; margin-top: 36px; }
+    .game { gap: 16px; align-items: flex-start; padding: 20px 18px; }
+    .game-icon { width: 60px; height: 60px; border-radius: 14px; }
+    footer .wrap { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="studio"><svg class="emblem" viewBox="50 82 540 476" aria-hidden="true"><path d="M320 92 L580 320 L320 548 L60 320 Z" fill="none" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M320 131 L536 320 L320 509 L104 320 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" opacity=".4"/><path fill="currentColor" d="M283.5199157714844 266.8Q282.9199157714844 273.8499725341797 282.6949157714844 280.41994781494145Q282.4699157714844 286.98992309570315 282.4699157714844 290.4999084472656Q282.4699157714844 293.5482902280746 282.61991577148444 296.3426401938162Q282.7699157714844 299.13699015955774 282.9199157714844 300.99989013671876H279.4699157714844Q277.8499267578125 289.2699340820312 274.1599578857422 282.5349578857422Q270.4699890136719 275.79998168945315 265.1750091552735 273.0249908447266Q259.880029296875 270.25 253.37000732421876 270.25H249.31987915039065Q245.22508120329485 270.25 243.1174646128779 270.9550018310547Q241.00984802246097 271.6600036621094 240.28984527587892 273.76001167297363Q239.5698425292969 275.8600196838379 239.5698425292969 280.30003662109374V359.4999633789063Q239.5698425292969 363.8199798583984 240.28984527587892 365.97998809814453Q241.00984802246097 368.13999633789064 243.1174646128779 368.8449981689453Q245.22508120329485 369.55 249.31987915039065 369.55H255.46995239257814Q261.32000732421875 369.55 266.675 366.4600082397461Q272.0299926757813 363.37001647949216 276.18496246337895 355.9750411987304Q280.3399322509766 348.58006591796874 282.4699157714844 335.80010986328125H285.9199157714844Q285.4699157714844 340.9300933837891 285.4699157714844 349.0000732421875Q285.4699157714844 352.5593957519531 285.63491668701175 359.20970886230464Q285.7999176025391 365.8600219726562 286.5199157714844 373.0Q278.8699157714844 372.7 269.2699157714844 372.625Q259.6699157714844 372.55 252.1699157714844 372.55Q248.31688073199732 372.55 242.2746212382562 372.55Q236.23236174451506 372.55 229.22684349090218 372.625Q222.22132523728928 372.7 215.04066902733604 372.775Q207.86001281738282 372.85 201.47002563476565 373.0V370.0Q206.2100311279297 369.7 208.52226994291266 368.79999999999995Q210.83450875789563 367.9 211.62727635160408 365.2Q212.42004394531253 362.5 212.42004394531253 357.1V282.7Q212.42004394531253 277.15 211.61195743641957 274.525Q210.80387092752662 271.9 208.4469519432555 270.92499999999995Q206.0900329589844 269.95 201.47002563476565 269.8V266.8Q207.915474155971 266.95 215.05772792271208 267.025Q222.19998168945315 267.1 229.21049258583474 267.175Q236.2210034822163 267.25 242.2675691303454 267.25Q248.31413477847454 267.25 252.1699157714844 267.25Q259.0699157714844 267.25 267.84491577148435 267.175Q276.6199157714844 267.1 283.5199157714844 266.8ZM260.9598663330078 318.1Q260.9598663330078 318.1 260.9598663330078 319.6Q260.9598663330078 321.1 260.9598663330078 321.1H235.0698425292969Q235.0698425292969 321.1 235.0698425292969 319.6Q235.0698425292969 318.1 235.0698425292969 318.1ZM265.30986633300785 298.3Q264.7098663330078 306.85 264.7848663330078 311.35Q264.85986633300786 315.85 264.85986633300786 319.6Q264.85986633300786 323.35 265.00986633300784 327.85Q265.1598663330078 332.35 265.75986633300784 340.9H262.30986633300785Q261.4698699951172 335.50000915527346 259.08489379882815 330.9850082397461Q256.6999176025391 326.4700073242187 252.6649368286133 323.7850036621094Q248.6299560546875 321.1 242.7499450683594 321.1V318.1Q247.09995422363284 318.1 250.38494415283205 316.25499725341797Q253.66993408203126 314.4099945068359 256.0099166870117 311.37999267578124Q258.3498992919922 308.34999084472656 259.8198837280273 304.9149917602539Q261.2898681640625 301.47999267578126 261.85986633300786 298.3Z M329.26987915039064 255.63999633789064V359.0638840856631Q329.26987915039064 365.35 331.2948883056641 367.6Q333.3198974609375 369.85 338.2699157714844 369.85V373.0Q335.38782781556597 372.85 329.538884610908 372.625Q323.68994140625006 372.4 317.59995422363284 372.4Q311.55843012883116 372.4 305.33921414888823 372.625Q299.11999816894536 372.85 295.9700073242188 373.0V369.85Q300.92002563476564 369.85 302.9450347900391 367.605232478297Q304.9700439453125 365.36046495659406 304.9700439453125 359.0751158958258V273.6242989029995Q304.9700439453125 266.88999633789064 303.0752993935033 263.66499633789067Q301.1805548416941 260.43999633789065 295.9700073242188 260.43999633789065V257.2899963378906Q300.7700073242188 257.7399963378906 305.2700073242188 257.7399963378906Q312.13996887207037 257.7399963378906 318.1549377441407 257.2149963378906Q324.169906616211 256.68999633789065 329.26987915039064 255.63999633789064Z M398.59986267089846 266.6499908447266 434.9598663330078 360.4Q437.0898681640625 365.62000732421876 439.5798736572266 367.7350036621094Q442.06987915039065 369.85 444.1098846435547 370.0V373.0Q439.18991394042973 372.7 432.5599487304688 372.625Q425.92998352050785 372.55 419.0600219726563 372.55Q411.7700439453125 372.55 405.3500640869141 372.625Q398.9300842285156 372.7 395.0600952148438 373.0V370.0Q402.71009521484376 369.7 404.7500961303711 367.375Q406.79009704589845 365.05 403.79009704589845 357.4L379.0100494384766 289.32990112304685L381.8900421142578 284.73994140625L360.1099761962891 341.38011169433594Q356.6299926757813 350.38006591796875 355.87999725341797 355.9450439453125Q355.1300018310547 361.51002197265626 356.58499908447266 364.51001281738286Q358.03999633789067 367.5100036621094 361.29499359130864 368.6800018310547Q364.5499908447266 369.85 369.0799926757813 370.0V373.0Q363.8000091552735 372.7 359.3450073242188 372.625Q354.8900054931641 372.55 349.9100219726563 372.55Q346.88001098632816 372.55 343.7750183105469 372.625Q340.67002563476564 372.7 338.42002563476564 373.0V370.0Q341.7800201416016 369.3699981689453 345.11001739501955 365.7550109863281Q348.4400146484375 362.14002380371096 351.83000183105474 353.3500549316406L385.52002563476566 266.6499908447266Q388.51998901367193 266.8899871826172 392.0599441528321 266.8899871826172Q395.59989929199224 266.8899871826172 398.59986267089846 266.6499908447266ZM406.46002197265625 329.8V332.8H361.76002197265626L363.26002197265626 329.8Z"/></svg><span>ElarionArts</span></span>
+    <div class="lang" role="group" aria-label="Язык / Language">
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1><span class="ru">Мобильные игры для Android</span><span class="en">Mobile games for Android</span></h1>
+  <p class="lead">
+    <span class="ru">ElarionArts — независимый разработчик логических игр.</span>
+    <span class="en">ElarionArts is an independent developer of logic games.</span>
+  </p>
+
+  <h2><span class="ru">Игры</span><span class="en">Games</span></h2>
+  <article class="game">
+    <svg class="game-icon" viewBox="0 0 108 108" aria-hidden="true">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2150"/><stop offset="1" stop-color="#0b1026"/></linearGradient>
+        <radialGradient id="g" cx="54" cy="54" r="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd54f" stop-opacity=".45"/><stop offset="1" stop-color="#ffd54f" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="108" height="108" fill="url(#bg)"/>
+      <circle cx="54" cy="54" r="38" fill="url(#g)"/>
+      <g fill="#2a3566">
+        <rect x="24.5" y="24.5" width="17" height="17" rx="4"/><rect x="66.5" y="24.5" width="17" height="17" rx="4"/>
+        <rect x="24.5" y="66.5" width="17" height="17" rx="4"/><rect x="66.5" y="66.5" width="17" height="17" rx="4"/>
+      </g>
+      <g fill="#ffd54f">
+        <rect x="45.5" y="24.5" width="17" height="17" rx="4"/><rect x="24.5" y="45.5" width="17" height="17" rx="4"/>
+        <rect x="45.5" y="45.5" width="17" height="17" rx="4"/><rect x="66.5" y="45.5" width="17" height="17" rx="4"/>
+        <rect x="45.5" y="66.5" width="17" height="17" rx="4"/>
+      </g>
+    </svg>
+    <div>
+      <h3><span class="ru">Светлячки: головоломка</span><span class="en">Fireflies: Logic Puzzle</span></h3>
+      <p>
+        <span class="ru">Зажгите всех светлячков: 150 уровней от 3×3 до 7×7.</span>
+        <span class="en">Light up every firefly: 150 levels from 3×3 to 7×7.</span>
+      </p>
+      <div class="links">
+        <a href="svetlyachki/"><span class="ru">Сайт игры</span><span class="en">Game website</span></a>
+        <a href="https://www.rustore.ru/catalog/app/ru.elarionarts.svetlyachki">RuStore</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="mailto:elarionarts@gmail.com">elarionarts@gmail.com</a>
+    <span>© 2026 ElarionArts</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var titles = { ru: 'ElarionArts — мобильные игры', en: 'ElarionArts — mobile games' };
+    var buttons = document.querySelectorAll('.lang button');
+    function apply(l, remember) {
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = l;
+      document.title = titles[l];
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+      if (remember) { try { localStorage.setItem('lang', l); } catch (e) {} }
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.lang, true); }); });
+    apply(document.documentElement.getAttribute('data-lang') || 'ru', false);
+  })();
+</script>
+</body>
+</html>

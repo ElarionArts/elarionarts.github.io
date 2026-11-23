@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elarionarts.github.io/svetlyachki/sitemap.xml
