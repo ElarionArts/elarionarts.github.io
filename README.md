@@ -1,6 +1,8 @@
 # ElarionArts
 
-Independent developer of logic games for Android.
+## Description
+
+Logic games for Android, from easy teasers to tricky puzzles.
 
 ## Games
 
@@ -17,9 +19,9 @@ This repository hosts the ElarionArts home page on GitHub Pages.
 
 ---
 
-# ElarionArts
+## Описание
 
-Независимый разработчик логических игр для Android.
+Логические игры для Android: от простых задач до сложных головоломок.
 
 ## Игры
 
