@@ -36,4 +36,4 @@ This repository hosts the ElarionArts home page on GitHub Pages.
 
 В этом репозитории лежит главная страница ElarionArts (GitHub Pages).
 
-© 2026 ElarionArts
+© 2026 ElarionArts. All rights reserved.
